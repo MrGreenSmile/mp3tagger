@@ -15,5 +15,5 @@ used mutagen for cover image, and eyeD3 for tags.
 >
 > Cover Image : find cover image.
 >
-> 여! : complete!
+> 여! : save all.
 2. done.
