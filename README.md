@@ -2,6 +2,8 @@
 
 used mutagen for cover image, and eyeD3 for tags.
 
+*to use this, download the exe file.*
+
 ## how to use
 ![tagger4mp3](/tutorial.png)
 
