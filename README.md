@@ -11,9 +11,5 @@ used mutagen for cover image, and eyeD3 for tags.
 
 0. activating file, choose audio file to start.
 1. put tags.
-> Open Files : open another file.
->
-> Cover Image : find cover image.
->
-> 여! : save all.
-2. if all done, press '여!' button.
+2. if you wanna change cover image, press 'Cover Image' button.
+3. press '여!' button to finish.
