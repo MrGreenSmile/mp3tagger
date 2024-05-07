@@ -1,4 +1,4 @@
-# tagger4mp3
+# mp3tagger
 
 used mutagen for cover image, and eyeD3 for tags.
 
@@ -7,7 +7,7 @@ used mutagen for cover image, and eyeD3 for tags.
 *to use this, download the exe file.*
 
 ## how to use
-![tagger4mp3](/tutorial.png)
+![mp3tagger](/tutorial.png)
 
 1. click "open file" to start tagging.
 1. put tags.
