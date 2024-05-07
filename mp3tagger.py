@@ -7,6 +7,9 @@ from mutagen.id3 import ID3, APIC
 import eyed3
 
 def aud_opener():
+    global path
+    global aud
+
     path = filedialog.askopenfilename(filetypes=[('mp3', '.mp3'), ('wma', '.wma'), ('all audio', '*.*')], initialdir='./input/')
     aud = eyed3.load(path)
 
@@ -53,7 +56,7 @@ def cover_img():
     if cov_path.endswith('jpeg'):
         mime = 'image/jpeg'
 
-    aud = MP3(aud_path, ID3=ID3)
+    aud = MP3(path, ID3=ID3)
     aud.tags.add(
             APIC(
                 encoding=0,
@@ -104,24 +107,21 @@ window.geometry('400x250+400+200')
 window.resizable(False, False)
 window.iconbitmap('./icon.ico')
 
-aud_path = filedialog.askopenfilename(filetypes=[('mp3', '.mp3'), ('wma', '.wma'), ('all audio', '*.*')], initialdir='./input/')
-aud = eyed3.load(aud_path)
-
-aud_title = Label(window, text=aud.tag.title, width=20)
+aud_title = Label(window, width=20)
 aud_title.grid(row=1, column=2, columnspan=2)
-aud_artist = Label(window, text=aud.tag.artist, width=20)
+aud_artist = Label(window, width=20)
 aud_artist.grid(row=2, column=2, columnspan=2)
-aud_genre = Label(window, text=aud.tag.genre, width=20)
+aud_genre = Label(window, width=20)
 aud_genre.grid(row=3, column=2, columnspan=2)
-aud_album = Label(window, text=aud.tag.album, width=20)
+aud_album = Label(window, width=20)
 aud_album.grid(row=4, column=2, columnspan=2)
-aud_date = Label(window, text=aud.tag.original_release_date, width=20)
+aud_date = Label(window, width=20)
 aud_date.grid(row=5, column=2, columnspan=2)
-aud_albumartist = Label(window, text=aud.tag.album_artist, width=20)
+aud_albumartist = Label(window, width=20)
 aud_albumartist.grid(row=6, column=2, columnspan=2)
-aud_composer = Label(window, text=aud.tag.composer, width=20)
+aud_composer = Label(window, width=20)
 aud_composer.grid(row=7, column=2, columnspan=2)
-aud_tracknumber = Label(window, text=aud.tag.track_num[0], width=20)
+aud_tracknumber = Label(window, width=20)
 aud_tracknumber.grid(row=8, column=2, columnspan=2)
 
 title = Label(window, text='Title : ')
@@ -142,28 +142,28 @@ tracknumber = Label(window, text='Track Number : ')
 tracknumber.grid(row=8, column=0)
 
 title_input = Entry(window, width=15)
-title_input.insert(0, aud.tag.title)
+#title_input.insert(0, aud.tag.title)
 title_input.grid(row=1, column=1)
 artist_input = Entry(window, width=15)
-artist_input.insert(0, aud.tag.artist)
+#artist_input.insert(0, aud.tag.artist)
 artist_input.grid(row=2, column=1)
 genre_input = Entry(window, width=15)
-genre_input.insert(0, aud.tag.genre)
+#genre_input.insert(0, aud.tag.genre)
 genre_input.grid(row=3, column=1)
 album_input = Entry(window, width=15)
-album_input.insert(0, aud.tag.album)
+#album_input.insert(0, aud.tag.album)
 album_input.grid(row=4, column=1)
 date_input = Entry(window, width=15)
-date_input.insert(0, str(aud.tag.original_release_date))
+#date_input.insert(0, str(aud.tag.original_release_date))
 date_input.grid(row=5, column=1)
 albumartist_input = Entry(window, width=15)
-albumartist_input.insert(0, aud.tag.album_artist)
+#albumartist_input.insert(0, aud.tag.album_artist)
 albumartist_input.grid(row=6, column=1)
 composer_input = Entry(window, width=15)
-composer_input.insert(0, aud.tag.composer)
+#composer_input.insert(0, aud.tag.composer)
 composer_input.grid(row=7, column=1)
 tracknumber_input = Entry(window, width=15)
-tracknumber_input.insert(0, aud.tag.track_num[0])
+#tracknumber_input.insert(0, aud.tag.track_num[0])
 tracknumber_input.grid(row=8, column=1)
 
 opener = Button(text='Open Files', command=aud_opener)
